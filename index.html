@@ -4,9 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <link 
+        rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous"
+    >
+
+    <title>Star Wars</title>
 </head>
 <body>
+
+    <!-- Begin Container -->
+    <div class="container-fluid">
+
+        <!-- Begin Your character Row -->
+        <div class="row">
+            <h3>Your Character</h3>
+            <div>
+                <img id="obi_id" class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2" src="assets/images/obi_wan.jpg" alt="obi_wan">
+            </div>
+
+        </div>
+        <!-- End Your character Row -->
+
+
+        <!-- Begin Enemy character Row -->
+        <div class="row">
+            <h3>Enemies Available To Attach</h3>
+            <div>
+                <img id="luke_id" class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2" src="assets/images/Luke_Sky.jpg" alt="Luke_Sky">
+                <img id="sidious_id" class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2" src="assets/images/Darth_Sidious.png" alt="Darth_Sidious">
+                <img id="maul_id" class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2" src="assets/images/Darth_Maul.png" alt="Darth_Maul">
+            </div>
+        </div>
+        <!-- End Enemy character Row -->
+     
+
+        <!-- Begin Fight Section -->
+        <h3>Fight Section</h3>
+        <button>Attach</button>
+        <h3>Defender</h3>
+        <span id="defender-pic"></span>
+        <!-- End Fight Section -->
+        
+
+    </div>
+    <!-- End Container -->
     
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
+
 </body>
 </html>
