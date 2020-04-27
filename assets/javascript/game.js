@@ -1,62 +1,81 @@
 
 
+// This is the box where the enemy will be staged to fight
+var defenderBox = $("#defender-pic");
 
+// The enemies will live here before they are called to fight
+var enemyContainer = $("#enemy-container");
+
+
+// validate is user is fighting an enemy
 $.fn.isEnemyPresent = function(){
     
-    return $("#defender-pic").find('p#enemy-1').length;
+    return defenderBox.find('p.enemy-grp').length;
     
     // enemy.find('p#enemy-1').length;
     // alert(found+  ' is Enemy');
 }
 
-$.fn.cleanUpDefenderBox = function(enemy){
+// Swap enemies in Defender Box
+$.fn.cleanUpDefenderBox = function(newEnemy){
 
-    // New enemy
-    console.log(enemy);
+    // Get children from Defender Box
+    var oldEnemy = defenderBox.children('p')[0];
 
-    // Defender Box
-    var defenderBox = $("#defender-pic");
-
-    // Need to move the current enemy into enemy-container
-    console.log($("#defender-pic").children('p')[0]);
-
-    var oldEnemy = $("#defender-pic").children('p')[0];
-
-    // Move back to the Enemy Container
-    var enemyContainer = $("#enemy-container");
-
+    // Move Child Above back to the Enemy Container
     $(oldEnemy).appendTo(enemyContainer);
 
-    $(enemy).appendTo(defenderBox);
+    // Load the new Enemy
+    $(newEnemy).appendTo(defenderBox);
 
 }
 
+$.fn.battle = function(){
+    
+}
+
 $("#enemy-1").on("click", function(){
-    alert("got me1");
-    var enemy = $("#defender-pic");
-    // $("#enemy-1").clone().appendTo(enemy);
-    $("#enemy-1").appendTo(enemy);
+
+    if(defenderBox.isEnemyPresent()){
+        defenderBox.cleanUpDefenderBox(this);
+    }
+    else {
+        $(this).appendTo(defenderBox);
+    }
 });
 
 $("#enemy-2").on("click", function(){
-    alert("got me2");
-    var enemy = $("#defender-pic");
-    if(enemy.isEnemyPresent()){
-        alert('enemy found');
-        enemy.cleanUpDefenderBox(this);
-        // I might be able to replace enemy 2 with "this"
-        // $("#enemy-2").appendTo(enemy);
+
+    if(defenderBox.isEnemyPresent()){
+        defenderBox.cleanUpDefenderBox(this);
     }
     else {
-        alert('no enemy');
+        $(this).appendTo(defenderBox);
     }
     
 });
 
 $("#enemy-3").on("click", function(){
-    alert("got me3");
+
+    if(defenderBox.isEnemyPresent()){
+        defenderBox.cleanUpDefenderBox(this);
+    }
+    else {
+        $(this).appendTo(defenderBox);
+    }
 });
 
+
+$("#attack").on("click", function(){
+    
+    if(!defenderBox.isEnemyPresent()){
+        alert("Select an Enemy first");
+    }
+    else {
+        // Need to remove the score from user and enemy
+        var enemy = defenderBox.children('p')[0];
+    }
+})
 
 // another way to write click function
 // $(".call-btn").click(function(){
