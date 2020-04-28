@@ -6,14 +6,15 @@ var defenderBox = $("#defender-pic");
 // The enemies will live here before they are called to fight
 var enemyContainer = $("#enemy-container");
 
+// User 
+var user = $("#obi_id");
+
 
 // validate is user is fighting an enemy
 $.fn.isEnemyPresent = function(){
     
     return defenderBox.find('p.enemy-grp').length;
     
-    // enemy.find('p#enemy-1').length;
-    // alert(found+  ' is Enemy');
 }
 
 // Swap enemies in Defender Box
@@ -30,9 +31,50 @@ $.fn.cleanUpDefenderBox = function(newEnemy){
 
 }
 
-$.fn.battle = function(){
+// Get random number multiple of 5
+$.fn.randomEnergy = function() {
     
+    // Cannot have 0 so we added 5
+    return (Math.floor(Math.random()*11)*5) + 5;
 }
+
+
+$.fn.battle = function(enemyName){
+    // alert(attackButton.randomEnergy());
+    var enemyScore = $(defenderBox.children('p')[0]).children("span").text();
+
+    var userScore = $(user.children("span")[0]).text();
+
+    var userLostPoints = user.randomEnergy();
+
+    var enemyLostPoints = defenderBox.randomEnergy();
+
+    console.log(userLostPoints);
+    console.log(enemyLostPoints);
+
+    var userDamage = userScore - userLostPoints + enemyLostPoints;
+
+    var enemyDamage = enemyScore - enemyLostPoints + userLostPoints;
+
+    $(defenderBox.children('p')[0]).children("span").text(enemyDamage); 
+
+    $(user.children("span")[0]).text(userDamage);
+
+
+    $("#user-attack").text("You attacked " + enemyName + " for " + enemyLostPoints + " damage");
+    
+    $("#enemy-attack").text(enemyName + " attacked you back for " + userLostPoints + " damage");
+
+    if(enemyDamage <= 0){
+        alert(enemyName + " Defeated!");
+        $(defenderBox.children('p')[0]).remove();
+    }
+    else if(userDamage <= 0){
+        alert("You Lost");
+    }
+
+}
+
 
 $("#enemy-1").on("click", function(){
 
@@ -68,12 +110,19 @@ $("#enemy-3").on("click", function(){
 
 $("#attack").on("click", function(){
     
+    var enemyName = $($(defenderBox.children('p')[0]).children("img")).attr("alt")
+
+    
+
     if(!defenderBox.isEnemyPresent()){
+        
         alert("Select an Enemy first");
     }
     else {
         // Need to remove the score from user and enemy
-        var enemy = defenderBox.children('p')[0];
+        enemyName = enemyName.replace(/_/g," ");
+
+        user.battle(enemyName);
     }
 })
 

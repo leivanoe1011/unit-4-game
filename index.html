@@ -23,9 +23,9 @@
         <!-- Begin Your character Row -->
         <div class="row">
             <h3 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">Your Character</h3>
-            <p class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Obi Wan Kanobi <br> 
-                <img id="obi_id" class="img-fluid img-thumbnail" src="assets/images/obi_wan.jpg" alt="obi_wan"> <br> 
-                <span id="Obi-score">100</span> 
+            <p id="obi_id" class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Obi Wan Kanobi <br> 
+                <img class="img-fluid img-thumbnail" src="assets/images/obi_wan.jpg" alt="obi_wan"> <br> 
+                <span id="obi-score">180</span> 
             </p>            
 
         </div>
@@ -41,15 +41,15 @@
                 <!-- Enemy Group is used to toggle between images -->
                 <p id="enemy-1" class="enemy-grp col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Luke Skywalker <br> 
                     <img class="img-fluid img-thumbnail" id="luke_id"  src="assets/images/Luke_Sky.jpg" alt="Luke_Sky"> <br> 
-                    <span id="luke-score">100</span> </p>
+                    <span id="luke-score" class ="enemy-score">170</span> </p>
             
                 <p id="enemy-2" class="enemy-grp col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Darth Sidious <br> 
                     <img class="img-fluid img-thumbnail" id="sidious_id" src="assets/images/Darth_Sidious.png" alt="Darth_Sidious"> <br> 
-                    <span id="luke-score">100</span> </p>
+                    <span id="luke-score" class ="enemy-score">190</span> </p>
 
                 <p id="enemy-3" class="enemy-grp col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Darth Maul <br> 
                     <img class="img-fluid img-thumbnail" id="maul_id"  src="assets/images/Darth_Maul.png" alt="Darth_Maul">   <br> 
-                    <span id="luke-score">100</span> </p>
+                    <span id="luke-score" class ="enemy-score">180</span> </p>
             
             </div >
         </div>
@@ -66,6 +66,10 @@
 
         <h3>Defender</h3>
         <div id="defender-pic"></div>
+        <div id="attack-summary">
+            <span id="user-attack"></span> <br>
+            <span id="enemy-attack"></span>
+        </div>
         <!-- End Fight Section -->
         
 
