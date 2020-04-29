@@ -8,18 +8,30 @@
 
 body {
     font-family: 'IBM 3270' ;
-  }
-
-#container_features {
-    background-image: url("/assets/images/battle_ship.jpg");
+    background-image: url('/unit-4-game/assets/images/battle.jpg') !important;
     background-color: #cccccc;
     /* height: 500px; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    font-size: 125%;
+    overflow: auto;
+  }
+
+
+
+h1 {
+    font-size: 75px;
+    color: white;
 }
 
+h3 {
+    font-size: 40px;
+    color: black;
+    font-weight: bolder;
+    background: #d6e5f7;
+}
 
 .card {
     margin: 0 10px 0 10px;
@@ -38,8 +50,8 @@ body {
 
 
 .card-img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin-top: -20px;
     margin-bottom: -20px;
     /* padding: -50px; */
@@ -50,8 +62,18 @@ body {
     border:none;
 }
 
+span {
+    font-size: 30px;
+    font-weight: bolder;
+}
 
+#attack-summary {
+    background-color: #d6e5f7;
+}
 
+button {
+    font-size: 30px;
+}
 
 
 
