@@ -13,7 +13,7 @@ var user = $("#obi_id");
 // validate is user is fighting an enemy
 $.fn.isEnemyPresent = function(){
     
-    return defenderBox.find('p.enemy-grp').length;
+    return defenderBox.find('div.enemy-grp').length;
     
 }
 
@@ -21,7 +21,7 @@ $.fn.isEnemyPresent = function(){
 $.fn.cleanUpDefenderBox = function(newEnemy){
 
     // Get children from Defender Box
-    var oldEnemy = defenderBox.children('p')[0];
+    var oldEnemy = defenderBox.children('div')[0];
 
     // Move Child Above back to the Enemy Container
     $(oldEnemy).appendTo(enemyContainer);
@@ -41,9 +41,14 @@ $.fn.randomEnergy = function() {
 
 $.fn.battle = function(enemyName){
     // alert(attackButton.randomEnergy());
-    var enemyScore = $(defenderBox.children('p')[0]).children("span").text();
+    // var enemyScore = $(defenderBox.children('p')[0]).children("span").text();
+    var enemyScore = $(defenderBox.find(".warrior-score")).text();
 
-    var userScore = $(user.children("span")[0]).text();
+    // var userScore = $(user.children("span")[0]).text();
+    var userScore = $(user.find(".warrior-score")).text();
+
+    console.log("Enemy Score " + enemyScore);
+    console.log("user score " + userScore);
 
     var userLostPoints = user.randomEnergy();
 
@@ -56,9 +61,14 @@ $.fn.battle = function(enemyName){
 
     var enemyDamage = enemyScore - enemyLostPoints + userLostPoints;
 
-    $(defenderBox.children('p')[0]).children("span").text(enemyDamage); 
 
-    $(user.children("span")[0]).text(userDamage);
+    console.log("Enemy Damage " + enemyDamage);
+    console.log("user Damage " + userDamage);
+
+
+    $(defenderBox.find(".warrior-score")).text(enemyDamage); 
+
+    $(user.find(".warrior-score")).text(userDamage)
 
 
     $("#user-attack").text("You attacked " + enemyName + " for " + enemyLostPoints + " damage");
@@ -67,7 +77,7 @@ $.fn.battle = function(enemyName){
 
     if(enemyDamage <= 0){
         alert(enemyName + " Defeated!");
-        $(defenderBox.children('p')[0]).remove();
+        $(defenderBox.children('div')[0]).remove();
     }
     else if(userDamage <= 0){
         alert("You Lost");
@@ -79,12 +89,14 @@ $.fn.battle = function(enemyName){
 $("#enemy-1").on("click", function(){
 
     if(defenderBox.isEnemyPresent()){
+        console.log('did it find an Enemy')
         defenderBox.cleanUpDefenderBox(this);
     }
     else {
         $(this).appendTo(defenderBox);
     }
 });
+
 
 $("#enemy-2").on("click", function(){
 
@@ -110,9 +122,8 @@ $("#enemy-3").on("click", function(){
 
 $("#attack").on("click", function(){
     
-    var enemyName = $($(defenderBox.children('p')[0]).children("img")).attr("alt")
-
-    
+    // var enemyName = $($(defenderBox.children('div')[0]).children(".enemy-img")).attr("alt")
+    var enemyName = $(defenderBox.find(".enemy-img")).attr("alt");
 
     if(!defenderBox.isEnemyPresent()){
         

@@ -1,9 +1,39 @@
 
 img {
-    width: 50%;
+    width: 100%;
 }
 p {
-    width: 10%;
+    width: 100%;
+}
+
+
+.card {
+    margin: 0 10px 0 10px;
+    background: black;
+    color: white;
+}
+
+#obi_id {
+    background: white;
+    color: black;
+}
+
+.enemy-grp {
+    width: 100%;
+}
+
+
+.card-img {
+    width: 200px;
+    height: 200px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    /* padding: -50px; */
+}
+
+
+.card-footer, .card-header {
+    border:none;
 }
 
 
