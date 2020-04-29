@@ -7,66 +7,114 @@
 
     <link 
         rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
-        crossorigin="anonymous"
     >
 
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Star Wars</title>
+
+
 </head>
 <body>
 
     <!-- Begin Container -->
-    <div class="container-fluid">
+    <div class="container">
+
+        <!-- Start Row -->
+        <div class="row justify-content-end">
+            <h1>Star Wars RPG !</h1>
+        </div>
+        <!-- End Row -->
+
+        <!--  -->
+        <div class="row justify-content-start">
+            <h2>Your Character</h2>
+        </div>
 
         <!-- Begin Your character Row -->
-        <div class="row">
-            <h3 class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">Your Character</h3>
-            <p id="obi_id" class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Obi Wan Kanobi <br> 
-                <img class="img-fluid img-thumbnail" src="assets/images/obi_wan.jpg" alt="obi_wan"> <br> 
-                <span id="obi-score">180</span> 
-            </p>            
+        <div class="row justify-content-start text-center ">
+
+            <div id="obi_id" class="card border-success mb-3 " style="max-width: 18rem;">
+                <div class="card-header ">Obi Wan Kanobi</div>
+                <div class="card-body text-success">
+                    <img src="assets/images/obi_wan.jpg" class="card-img img-thumbnail " alt="obi_wan">
+
+                </div>
+                <div id="obi-score" class="warrior-score card-footer bg-transparent ">180</div>
+              </div>
 
         </div>
         <!-- End Your character Row -->
 
         <br>
 
+        
         <!-- Begin Enemy character Row -->
-        <div class="row">
-            <h3 class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12">Enemies Available To Attach</h3>
-            <div id ="enemy-container" class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12">
-
-                <!-- Enemy Group is used to toggle between images -->
-                <p id="enemy-1" class="enemy-grp col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Luke Skywalker <br> 
-                    <img class="img-fluid img-thumbnail" id="luke_id"  src="assets/images/Luke_Sky.jpg" alt="Luke_Sky"> <br> 
-                    <span id="luke-score" class ="enemy-score">170</span> </p>
-            
-                <p id="enemy-2" class="enemy-grp col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Darth Sidious <br> 
-                    <img class="img-fluid img-thumbnail" id="sidious_id" src="assets/images/Darth_Sidious.png" alt="Darth_Sidious"> <br> 
-                    <span id="luke-score" class ="enemy-score">190</span> </p>
-
-                <p id="enemy-3" class="enemy-grp col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2"> Darth Maul <br> 
-                    <img class="img-fluid img-thumbnail" id="maul_id"  src="assets/images/Darth_Maul.png" alt="Darth_Maul">   <br> 
-                    <span id="luke-score" class ="enemy-score">180</span> </p>
-            
-            </div >
+        <div class="row justify-content-start">
+            <h3 class="col-xs-12 col-sm-12 col-md-8 col-lg-12 col-xl-12">Enemies Available To Attack</h3>
         </div>
         <!-- End Enemy character Row -->
+
+        <!-- Enemies -->
+        <!-- Begin Row -->
+        <div class="row justify-content-start" id ="enemy-container" >
+
+            <!-- Start New Card -->
+            <div id="enemy-1"  class="enemy-grp card border-success mb-3 order-1 text-center " style="max-width: 18rem;">
+                <div class="card-header bg-transparent ">Luke Skywalker</div>
+                <div class="card-body text-success">
+                    <img src="assets/images/Luke_Sky.jpg" id="luke_id" class="enemy-img card-img img-thumbnail " alt="Luke_Skywalker">
+                </div>
+                <div id="luke-score" class="warrior-score card-footer bg-transparent ">170</div>
+              </div>
+              <!-- End Card -->
+
+              <!-- Start New Card -->
+              <div id="enemy-2" class="enemy-grp card border-success mb-3 order-3 text-center " style="max-width: 18rem;">
+                <div class="card-header bg-transparent ">Darth Sidious</div>
+                <div class="card-body text-success">
+                    <img src="assets/images/Darth_Sidious.png" id="sidious_id" class="enemy-img card-img img-thumbnail" alt="Darth_Sidious">
+                </div>
+                <div id="sidious-score" class="warrior-score card-footer bg-transparent ">190</div>
+              </div>
+              <!-- End Card -->
+
+              <!-- Start New Card -->
+              <div id="enemy-3" class="enemy-grp card border-success mb-3 order-2 text-center " style="max-width: 18rem;">
+                <div class="card-header bg-transparent ">Darth Maul</div>
+                <div class="card-body text-success">
+                    <img src="assets/images/Darth_Maul.png" id="maul_id" class="enemy-img card-img img-thumbnail" alt="Darth_Maul">
+                </div>
+                <div id="maul-score" class="warrior-score card-footer bg-transparent ">180</div>
+              </div>
+              <!-- End Card -->
+
+        </div>
+        <!-- End Row -->
+      
      
         <br>
 
         <!-- Begin Fight Section -->
-        <h3>Fight Section</h3>
-        <button id="attack">Attack</button>
+        <div class="row justify-content-start">
+            <h3>Fight Section</h3>
+        </div>
+        <div class="row justify-content-start">
+            <button id="attack">Attack</button>
+        </div>
+        
 
         <br>
         <br>
 
-        <h3>Defender</h3>
+        <div class="row justify-content-start">
+            <h3>Defender</h3>
+        </div>
+        
+        <!-- Container will hold the enemy card -->
         <div id="defender-pic"></div>
         <div id="attack-summary">
+            <!-- Here we display the user and enemy damage -->
             <span id="user-attack"></span> <br>
             <span id="enemy-attack"></span>
         </div>
@@ -77,9 +125,14 @@
     <!-- End Container -->
     
 
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <!-- Custom jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/game copy.js"></script>
 
 
 </body>
