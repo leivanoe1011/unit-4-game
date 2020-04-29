@@ -1,9 +1,23 @@
 
-img {
-    width: 100%;
-}
-p {
-    width: 100%;
+
+/* 
+
+    font-family: 'IBM 3270 Semi-Narrow' !important; 
+
+*/
+
+body {
+    font-family: 'IBM 3270' ;
+  }
+
+#container_features {
+    background-image: url("/assets/images/battle_ship.jpg");
+    background-color: #cccccc;
+    /* height: 500px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 
