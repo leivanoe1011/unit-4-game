@@ -13,6 +13,7 @@
     }
 
     main.container-fluid {
+        position: relative;
         background-image: url('/unit-4-game/assets/images/battle.jpg') !important;
         background-color: #cccccc;
         background-position: center;
@@ -93,7 +94,8 @@
     /********************************************************************************************/
     /* Footer */
     /********************************************************************************************/
-    footer {
+
+    footer .container-fluid{
         position: relative;
         text-align: center;
         background-color: #666666;
@@ -104,10 +106,8 @@
         height: 140px;
         padding-top: 50px;
         color: white;
-        overflow: none;
+        overflow: hidden;
     }
-
-
 
 
 
