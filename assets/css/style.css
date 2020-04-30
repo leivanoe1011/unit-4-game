@@ -1,79 +1,124 @@
 
 
-/* 
+    /* 
 
-    font-family: 'IBM 3270 Semi-Narrow' !important; 
+        font-family: 'IBM 3270 Semi-Narrow' !important; 
 
-*/
+    */
 
-body {
-    font-family: 'IBM 3270' ;
-    background-image: url('/unit-4-game/assets/images/battle.jpg') !important;
-    background-color: #cccccc;
-    /* height: 500px; */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    font-size: 125%;
-    overflow: auto;
-  }
+    body {
+        font-family: 'IBM 3270' ;
+        font-size: 125%;
 
+    }
 
+    main.container-fluid {
+        background-image: url('/unit-4-game/assets/images/battle.jpg') !important;
+        background-color: #cccccc;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 90vh; /* We require 100vh for all backgrounds to ensure it covers the height of the screen no matter screen size */
+        overflow: auto;
+        padding-bottom: 100px;
+  
+    }
 
-h1 {
-    font-size: 75px;
-    color: white;
-}
-
-h3 {
-    font-size: 40px;
-    color: black;
-    font-weight: bolder;
-    background: #d6e5f7;
-}
-
-.card {
-    margin: 0 10px 0 10px;
-    background: black;
-    color: white;
-}
-
-#obi_id {
-    background: white;
-    color: black;
-}
-
-.enemy-grp {
-    width: 100%;
-}
+    .border-success {
+        border: 5px solid #4aaaa5 !important;
+    }
 
 
-.card-img {
-    width: 150px;
-    height: 150px;
-    margin-top: -20px;
-    margin-bottom: -20px;
-    /* padding: -50px; */
-}
+    h1 {
+        font-size: 85px;
+        color: white;
+    }
+
+    h3 {
+        font-size: 40px;
+        color: black;
+        font-weight: bolder;
+        background: #d6e5f7;
+    }
+
+    .card {
+        margin: 0 10px 0 10px;
+        background: black;
+        color: white;
+    }
+
+    #obi_id {
+        background: white;
+        color: black;
+    }
+
+    .enemy-grp {
+        width: 100%;
+    }
 
 
-.card-footer, .card-header {
-    border:none;
-}
+    .card-img {
+        width: 150px;
+        height: 150px;
+        margin-top: -20px;
+        margin-bottom: -20px;
+        /* padding: -50px; */
+    }
 
-span {
-    font-size: 30px;
-    font-weight: bolder;
-}
 
-#attack-summary {
-    background-color: #d6e5f7;
-}
+    .card-footer, .card-header {
+        border:none;
+    }
 
-button {
-    font-size: 30px;
-}
+    span {
+        font-size: 30px;
+        font-weight: bolder;
+    }
+
+    #attack-summary {
+        background-color: #d6e5f7;
+    }
+
+    button {
+        font-size: 30px;
+    }
+
+
+    /* .defender_row {
+
+    } */
+
+    
+
+    /********************************************************************************************/
+    /* Footer */
+    /********************************************************************************************/
+    footer {
+        position: relative;
+        text-align: center;
+        background-color: #666666;
+        border-top: 10px solid #4aaaa5;
+        /* position: fixed; */
+        bottom: 0;
+        width: 100%;
+        height: 140px;
+        padding-top: 50px;
+        color: white;
+        overflow: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
