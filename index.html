@@ -142,6 +142,7 @@
             </div>
         </div>
         
+          <!-- Audio file -->
         <audio id="playlist" > 
             <source src="assets/music/Star Wars- The Imperial March (Darth Vader s Theme).mp3" type="audio/mpeg" />
             <source src="assets/music/Star Wars Anakin s Betrayal x Clones Theme Order 66 Sad Music Mix.mp3" type="audio/mpeg"/>
@@ -157,7 +158,6 @@
         </div>
     </footer>
     
-    <!-- Audio file -->
     
 
     <!-- Bootstrap -->
@@ -169,7 +169,64 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>
 
+    <script>
+    
+        // Music Player is loaded here to ensure we don't get the DOM Promise issue
+        var player = document.getElementById("playlist");
 
+        var playlist = player.children;
+
+
+        // Generate random ID
+        function getRandomSong() {
+            
+            return Math.floor(Math.random() * playlist.length);
+            
+        }
+
+        // Listen for a click before playing music
+        // This will prevent the DOM error
+        // document.addEventListener('click', function() {
+        window.onload = function(){
+            // Once the DOM loads, we can play the music
+            playMusic();
+
+        };
+
+
+        function playMusic(){
+
+            // Load random Array index
+            var song = playlist[getRandomSong()];
+
+            // Get source mp3 path
+            var songSource = song.src;
+
+            // if the a song is playing pause
+            player.pause();
+
+            // load the new song
+            player.setAttribute('src', songSource);
+
+            // load the song first before playing
+            player.load();
+
+            player.play();
+
+        }
+
+        // function listens when the player song ends
+        player.onended = function() {
+            // Once the song ends, we restart the player
+            playMusic();
+
+            // The functions below can be used to stop the player. They have to be used in conjunction
+            // player.pause();
+            // player.currentTime = 0
+        }
+
+
+    </script>
 </body>
 </html>
 

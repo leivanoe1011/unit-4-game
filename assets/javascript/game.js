@@ -101,7 +101,7 @@
     });
 
     $("#enemy-3").on("click", function(){
-
+        x
         if(defenderBox.isEnemyPresent()){
             defenderBox.cleanUpDefenderBox(this);
         }
@@ -134,61 +134,7 @@
     // });
 
 
-    // Music Player
-    // Music Player Function
-    var player = document.getElementById("playlist");
-
-    var playlist = player.children;
-
-
-    // Generate random ID
-    function getRandomSong() {
-        
-        return Math.floor(Math.random() * playlist.length);
-        
-    }
-
-    // Listen for the DOM to load before playing music
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // Once the DOM loads, we can play the music
-        playMusic();
-
-    });
-
-
-    function playMusic(){
-
-        // Load random Array index
-        var song = playlist[getRandomSong()];
-
-        // Get source mp3 path
-        var songSource = song.src;
-
-        // if the a song is playing pause
-        player.pause();
-
-        // load the new song
-        player.setAttribute('src', songSource);
-
-        // load the song first before playing
-        player.load();
-
-        player.play();
-
-    }
-
-    // function listens when the player song ends
-    player.onended = function() {
-        // Once the song ends, we restart the player
-        playMusic();
-
-        // The functions below can be used to stop the player. They have to be used in conjunction
-        // player.pause();
-        // player.currentTime = 0
-    }
-
-
+   
 
 
 
