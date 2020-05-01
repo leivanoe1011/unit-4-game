@@ -14,7 +14,7 @@
 
     main.container-fluid {
         position: relative;
-        background-image: url('/unit-4-game/assets/images/battle.jpg') !important;
+        background-image: url('../images/battle.jpg') !important;
         background-color: #cccccc;
         background-position: center;
         background-repeat: no-repeat;
