@@ -47,23 +47,15 @@
         // var userScore = $(user.children("span")[0]).text();
         var userScore = $(user.find(".warrior-score")).text();
 
-        console.log("Enemy Score " + enemyScore);
-        console.log("user score " + userScore);
 
         var userLostPoints = user.randomEnergy();
 
         var enemyLostPoints = defenderBox.randomEnergy();
 
-        console.log(userLostPoints);
-        console.log(enemyLostPoints);
 
         var userDamage = userScore - userLostPoints + enemyLostPoints;
 
         var enemyDamage = enemyScore - enemyLostPoints + userLostPoints;
-
-
-        console.log("Enemy Damage " + enemyDamage);
-        console.log("user Damage " + userDamage);
 
 
         $(defenderBox.find(".warrior-score")).text(enemyDamage); 
@@ -89,7 +81,6 @@
     $("#enemy-1").on("click", function(){
 
         if(defenderBox.isEnemyPresent()){
-            console.log('did it find an Enemy')
             defenderBox.cleanUpDefenderBox(this);
         }
         else {
@@ -174,11 +165,6 @@
         // Get source mp3 path
         var songSource = song.src;
 
-        // Get song name
-        var songName = song.getAttribute('data-song');
-
-        // populate the song name to the application
-
         // if the a song is playing pause
         player.pause();
 
@@ -203,7 +189,7 @@
     }
 
 
-    
+
 
 
 
