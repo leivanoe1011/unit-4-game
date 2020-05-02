@@ -10,7 +10,7 @@
     var enemyList = $("#enemy-container");
 
     // User 
-    var user = $("#obi_id");
+    var currentWarrior = "";
 
 
     // When you select your character the other Characters must move
@@ -85,10 +85,10 @@
         var enemyScore = $(defenderBox.find(".warrior-score")).text();
 
         // var userScore = $(user.children("span")[0]).text();
-        var userScore = $(user.find(".warrior-score")).text();
+        var userScore = $(currentWarrior).find(".warrior-score").text();
 
 
-        var userLostPoints = user.randomEnergy();
+        var userLostPoints = $(currentWarrior).randomEnergy();
 
         var enemyLostPoints = defenderBox.randomEnergy();
 
@@ -100,7 +100,7 @@
 
         $(defenderBox.find(".warrior-score")).text(enemyDamage); 
 
-        $(user.find(".warrior-score")).text(userDamage)
+        $(currentWarrior).find(".warrior-score").text(userDamage)
 
 
         $("#user-attack").text("You attacked " + enemyName + " for " + enemyLostPoints + " damage");
@@ -124,6 +124,8 @@
         if(defenderBox.isEnemyBoxEmpty() === 0){
 
             defenderBox.moveEnemies(this);
+
+            currentWarrior = this;
         }
         // If the Enemy Box is NOT empty and Defender Box IS empty
         else if(defenderBox.isEnemyBoxEmpty() > 0 && defenderBox.isEnemyPresent() > 0){
@@ -144,6 +146,8 @@
         if(defenderBox.isEnemyBoxEmpty() === 0){
 
             defenderBox.moveEnemies(this);
+
+            currentWarrior = this;
         }
         // If the Enemy Box is NOT empty and Defender Box IS empty
         else if(defenderBox.isEnemyBoxEmpty() > 0 && defenderBox.isEnemyPresent() > 0){
@@ -163,6 +167,8 @@
         if(defenderBox.isEnemyBoxEmpty() === 0){
 
             defenderBox.moveEnemies(this);
+
+            currentWarrior = this;
         }
         // If the Enemy Box is NOT empty and Defender Box IS empty
         else if(defenderBox.isEnemyBoxEmpty() > 0 && defenderBox.isEnemyPresent() > 0){
@@ -183,6 +189,8 @@
         if(defenderBox.isEnemyBoxEmpty() === 0){
 
             defenderBox.moveEnemies(this);
+
+            currentWarrior = this;
         }
         // If the Enemy Box is NOT empty and Defender Box IS empty
         else if(defenderBox.isEnemyBoxEmpty() > 0 && defenderBox.isEnemyPresent() > 0){
@@ -193,7 +201,7 @@
 
             $(this).appendTo(defenderBox);
         }
-        
+
     });
 
 
@@ -210,14 +218,17 @@
             // Need to remove the score from user and enemy
             enemyName = enemyName.replace(/_/g," ");
 
-            user.battle(enemyName);
+            $(currentWarrior).battle(enemyName);
         }
     })
+
 
     // another way to write click function
     // $(".call-btn").click(function(){
     //     $.fn.myFunction();
     // });
+
+
     
     // Music Player is loaded here to ensure we don't get the DOM Promise issue
     var player = document.getElementById("playlist");
